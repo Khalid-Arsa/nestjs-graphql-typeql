@@ -13,7 +13,8 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
       autoSchemaFile: 'schema.gql',
     }),
     AuthorModule, 
-    BookModule],
+    BookModule
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
