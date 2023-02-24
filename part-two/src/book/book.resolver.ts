@@ -17,8 +17,8 @@ export class BookResolver {
   }
 
   @Query(() => Book)
-  async book(@Args("input") book: FindBookInput) {
-    return this.bookService.findById(book.id)
+  async book(@Args("input") { _id }: FindBookInput) {
+    return this.bookService.findById(_id)
   }
 
   @Mutation(() => Book)
