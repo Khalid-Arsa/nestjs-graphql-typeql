@@ -25,19 +25,18 @@
 /// <reference types="mongoose/types/inferschematype" />
 import { Author } from 'src/author/author.schema';
 import { AuthorService } from 'src/author/author.service';
-import { Book, CreateBookInput, FindBookInput } from './book.schema';
+import { CreateBookDto, FindBookInput } from 'src/book/dto/create-book.dto';
+import { Book } from './book.schema';
 import { BookService } from './book.service';
 export declare class BookResolver {
-    private bookService;
-    private authorService;
+    private readonly bookService;
+    private readonly authorService;
     constructor(bookService: BookService, authorService: AuthorService);
-    books(): Promise<import("mongoose").LeanDocument<Book & import("mongoose").Document<any, any, any> & {
-        _id: import("mongoose").Types.ObjectId;
-    }>[]>;
+    books(): Promise<Book[]>;
     book({ _id }: FindBookInput): Promise<import("mongoose").LeanDocument<Book & import("mongoose").Document<any, any, any> & {
         _id: import("mongoose").Types.ObjectId;
     }>>;
-    createBook(book: CreateBookInput): Promise<Book & import("mongoose").Document<any, any, any> & {
+    createBook(book: CreateBookDto): Promise<Book & import("mongoose").Document<any, any, any> & {
         _id: import("mongoose").Types.ObjectId;
     }>;
     author(book: Book): Promise<import("mongoose").LeanDocument<Author & import("mongoose").Document<any, any, any> & {

@@ -9,39 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FindBookInput = exports.BookSchema = exports.Book = void 0;
-const mongoose_1 = require("@nestjs/mongoose");
+exports.FindBookInput = exports.CreateBookDto = void 0;
 const graphql_1 = require("@nestjs/graphql");
-const author_schema_1 = require("../author/author.schema");
-const mongoose_2 = require("mongoose");
-let Book = class Book {
+let CreateBookDto = class CreateBookDto {
 };
 __decorate([
-    (0, graphql_1.Field)(() => graphql_1.ID),
-    __metadata("design:type", Number)
-], Book.prototype, "_id", void 0);
-__decorate([
-    (0, mongoose_1.Prop)({ required: true }),
     (0, graphql_1.Field)(),
     __metadata("design:type", String)
-], Book.prototype, "title", void 0);
+], CreateBookDto.prototype, "title", void 0);
 __decorate([
-    (0, mongoose_1.Prop)({ required: true }),
     (0, graphql_1.Field)(),
     __metadata("design:type", String)
-], Book.prototype, "isbn", void 0);
+], CreateBookDto.prototype, "isbn", void 0);
 __decorate([
-    (0, mongoose_1.Prop)({ type: mongoose_2.default.Schema.Types.ObjectId, ref: author_schema_1.Author.name }),
-    (0, graphql_1.Field)(() => author_schema_1.Author),
-    __metadata("design:type", Object)
-], Book.prototype, "author", void 0);
-Book = __decorate([
-    (0, mongoose_1.Schema)(),
-    (0, graphql_1.ObjectType)()
-], Book);
-exports.Book = Book;
-exports.BookSchema = mongoose_1.SchemaFactory.createForClass(Book);
-exports.BookSchema.index({ author: 1 });
+    (0, graphql_1.Field)(),
+    __metadata("design:type", String)
+], CreateBookDto.prototype, "author", void 0);
+CreateBookDto = __decorate([
+    (0, graphql_1.InputType)()
+], CreateBookDto);
+exports.CreateBookDto = CreateBookDto;
 let FindBookInput = class FindBookInput {
 };
 __decorate([
@@ -52,4 +39,4 @@ FindBookInput = __decorate([
     (0, graphql_1.InputType)()
 ], FindBookInput);
 exports.FindBookInput = FindBookInput;
-//# sourceMappingURL=book.schema.js.map
+//# sourceMappingURL=create-book.dto.js.map

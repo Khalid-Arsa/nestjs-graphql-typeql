@@ -27,14 +27,14 @@ input FindBookInput {
 
 type Mutation {
   createAuthor(input: CreateAuthorInput!): Author!
-  createBook(input: CreateBookInput!): Book!
+  createBook(input: CreateBookDto!): Book!
 }
 
 input CreateAuthorInput {
   name: String!
 }
 
-input CreateBookInput {
+input CreateBookDto {
   title: String!
   isbn: String!
   author: String!

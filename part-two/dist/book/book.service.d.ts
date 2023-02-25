@@ -23,21 +23,20 @@
 /// <reference types="mongoose/types/virtuals" />
 /// <reference types="mongoose/types/inferschematype" />
 import { Model } from 'mongoose';
-import { Book, CreateBookInput, BookDocument } from './book.schema';
+import { CreateBookDto } from 'src/book/dto/create-book.dto';
+import { Book, BookDocument } from './book.schema';
 export declare class BookService {
-    private bookModel;
+    private readonly bookModel;
     books: Partial<Book>[];
     constructor(bookModel: Model<BookDocument>);
-    findMany(): Promise<import("mongoose").LeanDocument<Book & import("mongoose").Document<any, any, any> & {
-        _id: import("mongoose").Types.ObjectId;
-    }>[]>;
+    findMany(): Promise<Book[]>;
     findById(id: string): Promise<import("mongoose").LeanDocument<Book & import("mongoose").Document<any, any, any> & {
         _id: import("mongoose").Types.ObjectId;
     }>>;
     findByAuthorId(authorId: number): Promise<(Book & import("mongoose").Document<any, any, any> & {
         _id: import("mongoose").Types.ObjectId;
     })[]>;
-    createBoook(book: CreateBookInput): Promise<Book & import("mongoose").Document<any, any, any> & {
+    createBoook(book: CreateBookDto): Promise<Book & import("mongoose").Document<any, any, any> & {
         _id: import("mongoose").Types.ObjectId;
     }>;
 }

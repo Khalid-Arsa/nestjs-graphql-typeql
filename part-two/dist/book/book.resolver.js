@@ -16,6 +16,7 @@ exports.BookResolver = void 0;
 const graphql_1 = require("@nestjs/graphql");
 const author_schema_1 = require("../author/author.schema");
 const author_service_1 = require("../author/author.service");
+const create_book_dto_1 = require("./dto/create-book.dto");
 const book_schema_1 = require("./book.schema");
 const book_service_1 = require("./book.service");
 let BookResolver = class BookResolver {
@@ -46,14 +47,14 @@ __decorate([
     (0, graphql_1.Query)(() => book_schema_1.Book),
     __param(0, (0, graphql_1.Args)("input")),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [book_schema_1.FindBookInput]),
+    __metadata("design:paramtypes", [create_book_dto_1.FindBookInput]),
     __metadata("design:returntype", Promise)
 ], BookResolver.prototype, "book", null);
 __decorate([
     (0, graphql_1.Mutation)(() => book_schema_1.Book),
     __param(0, (0, graphql_1.Args)('input')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [book_schema_1.CreateBookInput]),
+    __metadata("design:paramtypes", [create_book_dto_1.CreateBookDto]),
     __metadata("design:returntype", Promise)
 ], BookResolver.prototype, "createBook", null);
 __decorate([
