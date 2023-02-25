@@ -2,18 +2,19 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import books from 'src/data/books';
-import { Book, CreateBookInput, BookDocument } from './book.schema';
+import { CreateBookDto } from 'src/book/dto/create-book.dto';
+import { Book, BookDocument } from './book.schema';
 
 @Injectable()
 export class BookService {
   books: Partial<Book>[];
   constructor(
-    @InjectModel(Book.name) private bookModel: Model<BookDocument>
+    @InjectModel(Book.name) private readonly bookModel: Model<BookDocument>
   ) {
     this.books = books;
   }
 
-  async findMany() {
+  async findMany(): Promise<Book[]> {
     return this.bookModel.find().lean();
   }
 
@@ -25,7 +26,7 @@ export class BookService {
     return this.bookModel.find({ author: authorId });
   }
 
-  async createBoook(book: CreateBookInput) {
+  async createBoook(book: CreateBookDto) {
     return this.bookModel.create(book);
   }
 }

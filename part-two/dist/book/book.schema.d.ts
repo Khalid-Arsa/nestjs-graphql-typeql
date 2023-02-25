@@ -8,11 +8,6 @@ export declare class Book {
     author: Author | number;
 }
 export declare const BookSchema: mongoose.Schema<Book, mongoose.Model<Book, any, any, any, any>, {}, {}, {}, {}, mongoose.DefaultSchemaOptions, Book>;
-export declare class CreateBookInput {
-    title: string;
-    isbn: string;
-    author: string;
-}
 export declare class FindBookInput {
     _id: string;
 }
