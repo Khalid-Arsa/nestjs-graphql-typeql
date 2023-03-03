@@ -25,9 +25,10 @@
 /// <reference types="mongoose/types/inferschematype" />
 import { Author } from 'src/author/author.schema';
 import { AuthorService } from 'src/author/author.service';
-import { CreateBookDto, FindBookInput } from 'src/book/dto/create-book.dto';
+import { CreateBookDto } from 'src/book/dto/create-book.dto';
 import { Book } from './book.schema';
 import { BookService } from './book.service';
+import { FindBookInput } from './dto/update-book.dto';
 export declare class BookResolver {
     private readonly bookService;
     private readonly authorService;

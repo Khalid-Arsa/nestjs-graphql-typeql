@@ -3,6 +3,3 @@ export declare class CreateBookDto {
     readonly isbn: string;
     readonly author: string;
 }
-export declare class FindBookInput {
-    _id: string;
-}

@@ -1,9 +1,10 @@
 import { Args, Mutation, Parent, Query, ResolveField, Resolver } from '@nestjs/graphql';
 import { Author } from 'src/author/author.schema';
 import { AuthorService } from 'src/author/author.service';
-import { CreateBookDto, FindBookInput } from 'src/book/dto/create-book.dto';
+import { CreateBookDto } from 'src/book/dto/create-book.dto';
 import { Book } from './book.schema';
 import { BookService } from './book.service';
+import { FindBookInput } from './dto/update-book.dto';
 
 @Resolver(() => Book)
 export class BookResolver {

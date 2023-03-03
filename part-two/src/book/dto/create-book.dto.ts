@@ -11,9 +11,3 @@ export class CreateBookDto {
   @Field()
   readonly author: string;
 }
-
-@InputType()
-export class FindBookInput {
-  @Field()
-  _id: string;
-}

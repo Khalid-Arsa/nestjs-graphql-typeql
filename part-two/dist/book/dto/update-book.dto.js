@@ -9,24 +9,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateBookDto = void 0;
+exports.FindBookInput = void 0;
 const graphql_1 = require("@nestjs/graphql");
-let CreateBookDto = class CreateBookDto {
+let FindBookInput = class FindBookInput {
 };
 __decorate([
     (0, graphql_1.Field)(),
     __metadata("design:type", String)
-], CreateBookDto.prototype, "title", void 0);
-__decorate([
-    (0, graphql_1.Field)(),
-    __metadata("design:type", String)
-], CreateBookDto.prototype, "isbn", void 0);
-__decorate([
-    (0, graphql_1.Field)(),
-    __metadata("design:type", String)
-], CreateBookDto.prototype, "author", void 0);
-CreateBookDto = __decorate([
+], FindBookInput.prototype, "_id", void 0);
+FindBookInput = __decorate([
     (0, graphql_1.InputType)()
-], CreateBookDto);
-exports.CreateBookDto = CreateBookDto;
-//# sourceMappingURL=create-book.dto.js.map
+], FindBookInput);
+exports.FindBookInput = FindBookInput;
+//# sourceMappingURL=update-book.dto.js.map
