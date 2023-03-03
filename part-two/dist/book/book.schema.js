@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FindBookInput = exports.CreateBookInput = exports.BookSchema = exports.Book = void 0;
+exports.FindBookInput = exports.BookSchema = exports.Book = void 0;
 const mongoose_1 = require("@nestjs/mongoose");
 const graphql_1 = require("@nestjs/graphql");
 const author_schema_1 = require("../author/author.schema");
@@ -42,24 +42,6 @@ Book = __decorate([
 exports.Book = Book;
 exports.BookSchema = mongoose_1.SchemaFactory.createForClass(Book);
 exports.BookSchema.index({ author: 1 });
-let CreateBookInput = class CreateBookInput {
-};
-__decorate([
-    (0, graphql_1.Field)(),
-    __metadata("design:type", String)
-], CreateBookInput.prototype, "title", void 0);
-__decorate([
-    (0, graphql_1.Field)(),
-    __metadata("design:type", String)
-], CreateBookInput.prototype, "isbn", void 0);
-__decorate([
-    (0, graphql_1.Field)(),
-    __metadata("design:type", String)
-], CreateBookInput.prototype, "author", void 0);
-CreateBookInput = __decorate([
-    (0, graphql_1.InputType)()
-], CreateBookInput);
-exports.CreateBookInput = CreateBookInput;
 let FindBookInput = class FindBookInput {
 };
 __decorate([

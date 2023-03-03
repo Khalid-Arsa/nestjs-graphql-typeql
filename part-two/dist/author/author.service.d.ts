@@ -25,7 +25,7 @@
 import { Model } from 'mongoose';
 import { Author, AuthorDocument } from './author.schema';
 export declare class AuthorService {
-    private authorModel;
+    private readonly authorModel;
     constructor(authorModel: Model<AuthorDocument>);
     findMany(): Promise<import("mongoose").LeanDocument<Author & import("mongoose").Document<any, any, any> & {
         _id: import("mongoose").Types.ObjectId;

@@ -1,4 +1,4 @@
-import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose"
+import { Prop, raw, Schema, SchemaFactory } from "@nestjs/mongoose"
 import { ObjectType, Field, ID, InputType, Int } from "@nestjs/graphql";
 import { Author } from "src/author/author.schema";
 import mongoose from "mongoose";
@@ -27,18 +27,6 @@ export class Book {
 export const BookSchema = SchemaFactory.createForClass(Book);
 
 BookSchema.index({ author: 1 });
-
-@InputType()
-export class CreateBookInput {
-  @Field()
-  title: string;
-
-  @Field()
-  isbn: string;
-
-  @Field()
-  author: string;
-}
 
 @InputType()
 export class FindBookInput {

@@ -6,7 +6,7 @@ import { Author, AuthorDocument } from './author.schema';
 
 @Injectable()
 export class AuthorService {
-  constructor(@InjectModel(Author.name) private authorModel: Model<AuthorDocument>) {}
+  constructor(@InjectModel(Author.name) private readonly authorModel: Model<AuthorDocument>) {}
 
   async findMany() {
     return this.authorModel.find().lean();
